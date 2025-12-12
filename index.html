@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сайт</title>
+
+</head>
+<body>
+  <header class="header">
+    <h1>Добро пожаловать!</h1>
+    <nav>
+      <ul>
+        <li><a href="#features" class="nav-link">Фишки</a></li>
+        
+        <li><a href="#about" class="nav-link">О нас</a></li>
+
+        <li><a href="#contact" class="nav-link">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section id="features">
+    <h3>Фишки</h3>
+
+    <img src="https://avatars.mds.yandex.net/i?id=f1d852e79fa83f6c738e64784509738a_l-5221937-images-thumbs&n=13" width="400" height="300">
+    <ul>
+      <li>Адаптивный дизайн</li>
+      <li>Плавные анимации</li>
+      <li>Интерактивные кнопки</li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h3>О нас</h3>
+
+    <img src="https://kreptech.ru/ssl/u/86/df546aba1611efac1cdcbaa3726482/-/О%20нас%20фото.jpg" width="400" height="300">
+    <p>Мы создаём сложные сайты с любовью и вниманием к деталям.</p>
+  </section>
+
+  <section id="contact">
+    <h3>Свяжитесь с нами</h3>
+
+    <img src="https://sh-spck4-irkutsk-r138.gosweb.gosuslugi.ru/netcat_files/62/1120/Contact_us_2586657342_1520605975134.jpg" width="400" height="140">
+    <form action="/s" method="post">
+      <input type="text" placeholder="Имя" name="names"required />
+      <input type="email" placeholder="Email" name="emails" required />
+      <textarea placeholder="Сообщение" required name="texts"></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Все права защищены.</p>
+  </footer>
+  <style>
+    html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    color: #333;
+  }
+  
+  .header {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 4px;
+  }
+  
+  nav a:hover,
+  nav a.active {
+    background: #ff4081;
+    color: white;
+  }
+  
+  .hero {
+    background: linear-gradient(45deg, #2196F3, #21CBF3);
+    color: white;
+    padding: 60px;
+    text-align: center;
+  }
+  
+  button {
+    background: #ff4081;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.3s;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  </style>
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section');
+  
+  window.addEventListener('scroll' , () => {
+    let current = '';
+  
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+  
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  });
+  </script>
+</body>
+</html>
